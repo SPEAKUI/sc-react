@@ -20173,11 +20173,11 @@
 
 	var _ListPage2 = _interopRequireDefault(_ListPage);
 
-	var _TaskPage = __webpack_require__(399);
+	var _TaskPage = __webpack_require__(404);
 
 	var _TaskPage2 = _interopRequireDefault(_TaskPage);
 
-	var _ToolPage = __webpack_require__(400);
+	var _ToolPage = __webpack_require__(405);
 
 	var _ToolPage2 = _interopRequireDefault(_ToolPage);
 
@@ -20344,6 +20344,9 @@
 	                    _react2.default.createElement(_src.ScApplicationHeader, { title: 'ListPage using REACT' }),
 	                    _react2.default.createElement(_src.ScActionBar, { backElements: backElements, actionElements: actionElements }),
 	                    _react2.default.createElement(_src.ScText, { text: 'Hello, world!' }),
+	                    _react2.default.createElement(_src.ScProgresssIndicator, { show: true }),
+	                    _react2.default.createElement(_src.ScProgresssIndicator, null),
+	                    _react2.default.createElement(_src.ScProgresssIndicator, { size: 'small', show: true }),
 	                    _react2.default.createElement(_src.ScButton, { text: 'Hello World from right!' })
 	                )
 	            );
@@ -20364,7 +20367,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.ScAccountInformation = exports.ScNavigationContainer = exports.ScActionBar = exports.ScGlobalLogo = exports.ScApplicationHeader = exports.ScMainContainer = exports.ScGlobalHeader = exports.ScText = exports.ScButton = undefined;
+	exports.ScProgresssIndicator = exports.ScAccountInformation = exports.ScNavigationContainer = exports.ScActionBar = exports.ScGlobalLogo = exports.ScApplicationHeader = exports.ScMainContainer = exports.ScGlobalHeader = exports.ScText = exports.ScButton = undefined;
 
 	var _ScButton = __webpack_require__(171);
 
@@ -20402,6 +20405,10 @@
 
 	var _ScAccountInformation2 = _interopRequireDefault(_ScAccountInformation);
 
+	var _ScProgresssIndicator = __webpack_require__(399);
+
+	var _ScProgresssIndicator2 = _interopRequireDefault(_ScProgresssIndicator);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.ScButton = _ScButton2.default;
@@ -20413,6 +20420,7 @@
 	exports.ScActionBar = _ScActionBar2.default;
 	exports.ScNavigationContainer = _ScNavigationContainer2.default;
 	exports.ScAccountInformation = _ScAccountInformation2.default;
+	exports.ScProgresssIndicator = _ScProgresssIndicator2.default;
 	exports.default = {
 	    ScButton: _ScButton2.default,
 	    ScText: _ScText2.default,
@@ -20422,7 +20430,8 @@
 	    ScGlobalLogo: _ScGlobalLogo2.default,
 	    ScActionBar: _ScActionBar2.default,
 	    ScNavigationContainer: _ScNavigationContainer2.default,
-	    ScAccountInformation: _ScAccountInformation2.default
+	    ScAccountInformation: _ScAccountInformation2.default,
+	    ScProgresssIndicator: _ScProgresssIndicator2.default
 	};
 
 /***/ },
@@ -28553,6 +28562,151 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _ScProgressIndicator = __webpack_require__(400);
+
+	var _ScProgressIndicator2 = _interopRequireDefault(_ScProgressIndicator);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _ScProgressIndicator2.default;
+
+/***/ },
+/* 400 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _class, _temp;
+
+	var _react = __webpack_require__(162);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactCssModules = __webpack_require__(173);
+
+	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+
+	var _ScProgressIndicator = __webpack_require__(401);
+
+	var _ScProgressIndicator2 = _interopRequireDefault(_ScProgressIndicator);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ScProgressIndicator = (_temp = _class = function (_Component) {
+	    _inherits(ScProgressIndicator, _Component);
+
+	    function ScProgressIndicator() {
+	        _classCallCheck(this, ScProgressIndicator);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ScProgressIndicator).apply(this, arguments));
+	    }
+
+	    _createClass(ScProgressIndicator, [{
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var style = _props.style;
+	            var show = _props.show;
+	            var size = _props.size;
+
+	            var styleName = "loading";
+
+	            style = style || {};
+
+	            if (show) {
+	                style.display = 'block';
+	            }
+
+	            if (size === "small") {
+	                styleName = "loadingSmall";
+	            }
+
+	            return _react2.default.createElement('div', { style: style, styleName: styleName });
+	        }
+	    }]);
+
+	    return ScProgressIndicator;
+	}(_react.Component), _class.propTypes = {
+	    /**
+	     * Override the inline-styles of the root element.
+	     */
+	    style: _react.PropTypes.object,
+	    show: _react.PropTypes.bool,
+	    size: _react.PropTypes.string
+	}, _temp);
+	exports.default = (0, _reactCssModules2.default)(ScProgressIndicator, _ScProgressIndicator2.default);
+
+/***/ },
+/* 401 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(402);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(362)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!./../../node_modules/resolve-url-loader/index.js!./../../node_modules/sass-loader/index.js!./ScProgressIndicator.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!./../../node_modules/resolve-url-loader/index.js!./../../node_modules/sass-loader/index.js!./ScProgressIndicator.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 402 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(361)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".src-ScProgresssIndicator-___ScProgressIndicator__loading___1YpwR {\n  width: 32px;\n  height: 32px;\n  background: url(" + __webpack_require__(403) + ");\n  background-repeat: no-repeat;\n  background-position: left top;\n  background-size: cover;\n  display: none;\n}\n\n.src-ScProgresssIndicator-___ScProgressIndicator__loadingSmall___2NqcC {\n  width: 15px;\n  height: 15px;\n  background: url(" + __webpack_require__(403) + ");\n  background-repeat: no-repeat;\n  background-position: left top;\n  background-size: cover;\n  display: none;\n}", ""]);
+
+	// exports
+	exports.locals = {
+		"loading": "src-ScProgresssIndicator-___ScProgressIndicator__loading___1YpwR",
+		"loadingSmall": "src-ScProgresssIndicator-___ScProgressIndicator__loadingSmall___2NqcC"
+	};
+
+/***/ },
+/* 403 */
+/***/ function(module, exports) {
+
+	module.exports = "data:image/gif;base64,R0lGODlhIAAgAKIFANwpHu2CffSyruVLQ8zMzP///wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1OGMzMDI1Ni0yMDNiLTQ2NDUtOGUzYS01ZmMwMTI4NThlMzEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjhEMUUwQjFGMTRGMTFFMzk3NEVFMzhFMjAwRTJEQjIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjhEMUUwQjBGMTRGMTFFMzk3NEVFMzhFMjAwRTJEQjIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdlNGQ0MDA4LTI1YzItM2I0Zi05ZDk5LTI4MGI3NWI4YWUwNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1OGMzMDI1Ni0yMDNiLTQ2NDUtOGUzYS01ZmMwMTI4NThlMzEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/fn18e3p5eHd2dXRzcnFwb25tbGtqaWhnZmVkY2JhYF9eXVxbWllYV1ZVVFNSUVBPTk1MS0pJSEdGRURDQkFAPz49PDs6OTg3NjU0MzIxMC8uLSwrKikoJyYlJCMiISAfHh0cGxoZGBcWFRQTEhEQDw4NDAsKCQgHBgUEAwIBAAAh+QQFCgAFACwAAAAAIAAgAAADhhi6Wl4jyvgKuPgyVuesWbYtnUc9ITY2j3k6qbaWJhivAe3ZKa5/qNus5eKFKsikcslsOp/QqDQqqFqrU4J2q71es9yt1woOE8ZYqbmLLofRAjcXLhe31eupfs/v+/VrBBWBg4F5D4SIhmaFjIqLXI1hkpCCj5OXlZRbm4udlg6VkZmcpFoJACH5BAUKAAUALAAAAAAgABQAAANZKLpaXiHK+Mq4+DJW56xZti2dRz0hNjaPeTqptpYmGK8C7dkprn+o26zl4oUqyKRyyWw6n9CoNEqoWqtTgHarvV6z3K3XCg4DxlipuYsuh9EENxcuF7fV6wQAIfkEBQoABQAsAAAAACAAIAAAA21IulpeIsr4Srj4MlbnrFm2LZ1HPSE2No95Oqm2liYYrwTt2Smuf6jbrOXihSrIpHLJbDqf0Kh0SkUOrthrNZnNbq1d7fcRFo8L5cHZkV6jy+62e06v28eAvD7v3u/7fnxrgYJnhACAgYl+i3sJACH5BAUKAAUALAwAAAAUACAAAANdSLpaXiLKyNiDU9Z1s95E5wlg+IwkKHrlmrXneM10bd94ru914P8+HRAoHAZzxiMuGSganUMokUetWq2ArDZ7GXi/3u22C/6KteTy4Mx9qMPsdJkNkIPpdnPc/U4AACH5BAUKAAUALAAAAAAgACAAAANtWLrcviTK+Kqd0+qG5f5FR4GaSJCliF7q+phuLM90bX9Cruf3vvc+ni0orBEFwGDSt/zdntDoE0CtUhmDrDbLCHi/XqsVu9V2wV9xlVwenNEB9XXR5i7gYTm7/EbLAXtbfWB/gWZ3eIV0dYNfCQAh+QQFCgAFACwAAAwAIAAUAAADXgi6Wv4wFkIrZUzqZy1e29ZVXxNK41WeaFoCbJQSbwzNte3Meu//wKAwNCgai5CAcqmECJ7Q5/GYZC6dUejUWLUGsFnBFvnwNh9h6bhrBWfHAzbTHYXLr+i0vWymQxMAIfkEBQoABQAsAAAAACAAIAAAA20Iulr+MMrH2Ly4Lsyjbl34AaH4ld2IcurqvnAsz/Qz3PhdF3m+97gfcCAEFntHX21I3Dmf0OgsQK1SIYKsNgsheL9eqxW71XbBX3GVXBac0QT19dHmPuBhObv8RssDe1t9YH+BZnd4hXR1g18JACH5BAUKAAUALAAAAAAUACAAAANdOLpaXiDKyNiDU9Z1s95D5wFg+IwkKHrlmrXneM10bd94rttB7/e63y8oBOaKRhwyQCw2hc/hbkqtWquCrDZ7IXi/3u22C/6KteQy4cx9qMPsdJktkIPpdnPc/U4AADs="
+
+/***/ },
+/* 404 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 
@@ -28618,7 +28772,7 @@
 	exports.default = TaskPage;
 
 /***/ },
-/* 400 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

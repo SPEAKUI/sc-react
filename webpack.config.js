@@ -11,6 +11,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.png$/, loader: "url-loader" },
+            { test: /\.gif$/, loader: "url-loader" },
             {
                 test: /\.js$/,
                 loader: 'babel',
